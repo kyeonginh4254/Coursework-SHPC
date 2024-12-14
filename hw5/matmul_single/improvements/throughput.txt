@@ -1,0 +1,38 @@
+matmul_single_01.cu 
+shpc159@elogin3:~/hw5/matmul_single$ ./run.sh 1024 1024 1024 -n 5 -v
+Options:
+  Problem size: M = 1024, N = 1024, K = 1024
+  Number of iterations: 5
+  Print matrix: off
+  Validation: on
+
+Initializing matrices...Done!
+Calculating...(iter=0) 0.175439 sec
+Calculating...(iter=1) 0.175408 sec
+Calculating...(iter=2) 0.175423 sec
+Calculating...(iter=3) 0.175418 sec
+Calculating...(iter=4) 0.175439 sec
+Validating...
+Result: VALID
+Avg. time: 0.175425 sec
+Avg. throughput: 12.241589 GFLOPS
+
+matmul_single_02.cu
+shpc159@elogin3:~/hw5/matmul_single$ ./run.sh 4096 4096 4096 
+-n 5 -v
+Options:
+  Problem size: M = 4096, N = 4096, K = 4096
+  Number of iterations: 5
+  Print matrix: off
+  Validation: on
+
+Initializing matrices...Done!
+Calculating...(iter=0) 0.129466 sec
+Calculating...(iter=1) 0.129231 sec
+Calculating...(iter=2) 0.129239 sec
+Calculating...(iter=3) 0.129281 sec
+Calculating...(iter=4) 0.153526 sec
+Validating...
+Result: VALID
+Avg. time: 0.134149 sec
+Avg. throughput: 1024.526931 GFLOPS
