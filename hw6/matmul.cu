@@ -33,6 +33,14 @@ static cudaStream_t streams[NUM_DEVICE][NUM_CHUNK];
 #define TM 8
 #define TN 8
 #define TK 8
+/*
+이 커널은 hw5의 제 커널과 거의 유사하나,
+필요한 데이터를 shared memory에서 참조하는 것이 아니라,
+각 스레드가 점유하는 레지스터에 직접 적재하여 참조합니다.
+따라서 속도에 큰 이점이 있습니다.
+
+https://github.com/siboehm/SGEMM_CUDA/blob/master/src/kernels/5_kernel_2D_blocktiling.cuh 
+*/
 
 #define CEIL_DIV(a, b) (((a) + (b)-1) / (b))
 
